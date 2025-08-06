@@ -1,0 +1,32 @@
+# .pre-commit-config.yaml
+repos:
+  # General hooks
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-toml
+      - id: check-json
+      - id: pretty-format-json
+        args: ['--autofix']
+
+  # Additional Go tools
+  - repo: local
+    hooks:
+      - id: go-build
+        name: go build
+        entry: go build ./...
+        language: system
+        files: \.go$
+        pass_filenames: false
+
+      - id: go-test-short
+        name: go test (short)
+        entry: go test -short ./...
+        language: system
+        files: \.go$
+        pass_filenames: false
