@@ -178,6 +178,8 @@ func (wf *BaseWorkflow) Output(ev *BaseEvent, ctx *BaseContext) any {
 	return "Not an output step"
 }
 
+// NewBaseWorkflow creates a new BaseWorkflow instance starting from the definition
+// of the first step, a context instance and a map that represents steps.
 func NewBaseWorkflow(firstStep string, ctx *BaseContext, steps map[string]func(*BaseEvent, *BaseContext) *BaseEvent) *BaseWorkflow {
 	return &BaseWorkflow{
 		FirstStep: firstStep,
