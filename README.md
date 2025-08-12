@@ -35,7 +35,7 @@ To cap it all off, Go was designed for scalable and fast large-scale application
 To install the package, simply run:
 
 ```bash
-go get https://github.com/AstraBert/workflows-go
+go get github.com/AstraBert/workflows-go
 ```
 
 Or, if you want to get the package from source, clone the repository:
